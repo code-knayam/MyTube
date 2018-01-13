@@ -1,0 +1,64 @@
+.signUp {
+    min-height: 500px;
+}
+.signUp .form-group {
+    padding: 0px 20px;
+}
+.signUp  .form-group .input-group-addon {
+    background: rgb(178, 209, 87);
+    color: #111;
+    border: none;
+    width: 50px;
+    position: relative;
+    top: 40px;
+    height: 40px;
+    border-radius: 0;
+    z-index: 2;
+}
+.signUp  .form-group .form-control {
+    border-radius: 0;    
+    box-shadow: none;
+    border: none;
+    z-index: 1;
+    padding-left: 55px;
+    height: 40px;    
+}
+.signUp .form-group .form-control:focus {
+    box-shadow:  -3px 0 0px #333;
+}
+.signUp  .form-group label {
+    position: absolute;    
+	color: #aaa;
+    cursor: text;
+    font-weight: 300;    
+    font-size: 12px;
+    line-height: 40px;
+    margin-top: -40px;
+    margin-left: 55px;    
+    transition:  .3s ease-in, .2s margin-top ease-in;
+    -moz-transition:  .3s ease-in, .2s margin-top ease-in;
+    -webkit-transition:  .3s ease-in, .2s margin-top ease-in;
+    -o-transition:  .3s ease-in, .2s margin-top ease-in;
+}
+.signUp .form-group .form-control:focus + label,
+.signUp .form-group .form-control:valid + label,
+.signUp .form-group .form-control.ng-invalid.ng-touched + label {
+    margin-top: -80px;
+    margin-left: 5px;
+    font-size: 15px;
+    color: #222;    
+}
+
+.signUp .submit-group {
+    text-align: center;    
+    margin: 50px 0 20px;
+}
+.signUp .submit-group .submit-btn {
+    padding: 10px 20px;
+    background: rgb(178, 209, 87);
+    color: #111;
+    border-radius: 0;
+}
+.signUp .submit-group .submit-btn:hover {
+    box-shadow:  -3px 0 0px #333, 3px 0 0px #333;    
+}
