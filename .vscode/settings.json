@@ -1,7 +1,12 @@
 {
     "editor.quickSuggestions": {
-        "comments": true, // <- no 24x7 IntelliSense in comments
+        "comments": false, // <- no 24x7 IntelliSense in comments
         "strings": true, // but in strings and the other parts of source files
         "other": true
-    }
+    },
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "editor.wordWrap": "on",
+    "explorer.openEditors.visible": 0,
+    "css.lint.duplicateProperties": "warning"
 }

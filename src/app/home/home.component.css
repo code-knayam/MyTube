@@ -1,0 +1,54 @@
+.video-section {
+    border-bottom: 1px solid #aaa;
+}
+
+.video-block {    
+    height: 250px;
+    margin-top: 15px;
+    margin-bottom: 15px;    
+}
+.video-block .img-section {
+    height: 150px;
+}
+.video-block .img-section img {
+    width: 100%;
+    height: 100%;
+}
+.video-block .content-section {
+    height: 100px;
+    padding: 0;
+}
+.video-block .content-section .content-title {
+    padding: 0;
+    margin: 8px 0;
+}
+.video-block .content-section .content-title a {
+    font-size: 15px;
+    color: #111;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.video-block .content-section .content-channel {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2px;
+}
+.video-block .content-section .content-channel a {
+    font-size: 12px;
+    font-weight: 300;
+    color: #777;
+    padding: 0;
+    margin: 0;
+}
+.video-block .content-section p {
+    font-size: 12px;
+    color: #777;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+}
+.video-block .content-section p i {
+    font-size: 5px;
+    vertical-align: middle;
+}

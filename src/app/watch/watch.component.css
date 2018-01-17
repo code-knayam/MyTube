@@ -1,0 +1,42 @@
+.video-block {
+    height: 400px;
+    border: 1px solid #999;
+}
+.video-block video {
+    height: 100%;
+    width: 100%;
+    background: #111;
+}
+
+.content-video-block {
+    padding: 10px 0 10px;
+    border-bottom: 1px solid #ccc;
+}
+.content-video-block .video-title {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+.content-video-block .video-views {
+    font-size: 15px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.about-video-block {
+    padding: 30px 0 10px;
+    border-bottom: 1px solid #ccc;
+}
+.about-video-block .video-channel {
+    font-size: 16px;
+    color: #111;
+    cursor: pointer;    
+}
+.about-video-block .video-date {
+    font-size: 13px;
+    color: #999;
+}
+.about-video-block .video-desc {
+    font-size: 15px;
+    padding: 10px;
+    color: #333;
+}

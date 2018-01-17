@@ -1,0 +1,14 @@
+footer {    
+    height: 300px;
+    background: #333;       
+}
+footer .brand {
+    height: 300px;
+    padding: 100px 0;        
+}
+footer .brand a {
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+    font-size: 40px;
+}

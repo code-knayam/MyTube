@@ -1,34 +1,83 @@
 <div class="jumbotron signUp">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4"></div>
-      <div class="col-md-4">
-        <form action="">
-
-          <div class="form-group">            
+    <div class="container">
+      <div class="row">      
+        <div class="col-md-4 col-md-offset-4">
+  
+          <img src="assets/logo.png" alt="">
+  
+          <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+  
+            <div class="form-group">            
               <span class="input-group-addon"><i class="fa fa-user-o fa-fw"></i></span>
-              <input type="text" class="form-control" name="name" required>
-              <label for="name">Name</label>
-          </div>
-
-          <div class="form-group ">
-            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-            <input type="email" class="form-control" name="email" formControlName="email" required>
-            <label for="email">Email</label>
-          </div>
-
-          <div class="form-group">
+              <input 
+                type="text" 
+                class="form-control" 
+                name="name"                 
+                formControlName="username" 
+                autocomplete="username">  
+              <label 
+                for="username"            
+                [ngClass]="signUpForm.controls.username.value != '' && signUpForm.controls.username.dirty ?'active-label':'inactive-label' ">
+                Username</label>
+              <span 
+                class="error"
+                *ngIf="signUpForm.controls.username.dirty && signUpForm.controls.username.invalid && signUpForm.controls.username.errors.required == true">Username is required.</span>
+              <span 
+                class="error"
+                *ngIf="signUpForm.controls.username.dirty && signUpForm.controls.username.invalid && signUpForm.controls.username.errors.pattern">Only alphabets are allowed.</span>
+            </div>
+  
+            <div class="form-group ">
+              <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+              <input 
+                type="email" 
+                class="form-control" 
+                name="email"                 
+                formControlName="email" 
+                autocomplete="email"
+                email>       
+              <label 
+                for="username"            
+                [ngClass]="signUpForm.controls.email.value != '' && signUpForm.controls.email.dirty ?'active-label':'inactive-label' ">
+                Email</label>   
+              <span 
+                class="error"
+                *ngIf="signUpForm.controls.email.dirty && signUpForm.controls.email.invalid && signUpForm.controls.email.errors.required == true">Email is required.</span>
+              <span 
+                class="error"
+                *ngIf="signUpForm.controls.email.dirty && signUpForm.controls.email.invalid && signUpForm.controls.email.errors.pattern">Invalid Email.</span>
+            </div>
+  
+            <div class="form-group">
               <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-            <input type="password" class="form-control" name="password" required>
-            <label for="password">Password</label>
-          </div>
-
-          <div class="row submit-group">
-            <a href="" class="btn submit-btn">Sign Up</a>
-          </div>
-
-        </form>
+              <input 
+                type="password" 
+                class="form-control" 
+                name="password" 
+                formControlName="password" 
+                autocomplete="current-password">    
+              <label 
+                for="username"            
+                [ngClass]="signUpForm.controls.password.value != '' && signUpForm.controls.password.dirty ?'active-label':'inactive-label' ">
+                Password</label>   
+              <span 
+                class="error"
+                *ngIf="signUpForm.controls.password.dirty && signUpForm.controls.password.invalid && signUpForm.controls.password.errors.required == true">Password is required.</span>
+              <span 
+                class="error"
+                *ngIf="signUpForm.controls.password.dirty && signUpForm.controls.password.invalid && signUpForm.controls.password.errors.minlength">Must have atleast 8 characters.</span>
+              <span 
+                class="error"
+                *ngIf="signUpForm.controls.password.dirty && signUpForm.controls.password.invalid && !signUpForm.controls.password.errors.minlength && signUpForm.controls.password.errors.pattern">Can have only alphabets, numbers and _ $ </span>
+              
+            </div>                        
+  
+            <div class="row submit-group">
+              <button type="submit" class="btn submit-btn" [disabled]="!signUpForm.valid" >Sign Up</button>
+            </div>
+  
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>

@@ -26,6 +26,8 @@
 }
 #search-box i {
     border: 1px solid #aaa;
+    background: rgb(178, 209, 87);
+    color: #111;
     padding: 4px 20px;
     margin: 0;
 } 
