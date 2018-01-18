@@ -8,7 +8,19 @@ Replication of YouTube by using Angular 4.
 Each part of the app functions as an independent component.
 
 ### Components Present
-1. Auth Component
-|Name|Desc|
-.----.-----.
-|Sign In Component| Manages the |
+1. Auth Components
+| Sign In | Sign Up |
+| :------------: | :------------: |
+
+2. Core Components
+| Header | Footer |
+| :------------: | :------------: |
+
+3. Home Component
+
+4. Shared Components
+| Video Detail Component | 
+| :------------: | 
+
+5.  Watch Component
+
