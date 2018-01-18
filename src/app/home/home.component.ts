@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { VideoService } from '../shared/video.service';
+import { Video } from '../shared/video.model';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +10,12 @@ import { VideoService } from '../shared/video.service';
 })
 export class HomeComponent implements OnInit {
 
-  videoSections ;
+  videoDetails: Video[] ;
 
   constructor(private videoService: VideoService) { }
 
   ngOnInit() {
-    this.videoSections = this.videoService.getVideos();
+    this.videoDetails = this.videoService.getVideos();
   }
 
 }

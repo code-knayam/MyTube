@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-md-9">
+      <div class="col-md-7">
 
         <!-- Contains Video Player -->
         <div class="row">
@@ -16,15 +16,15 @@
 
           <!-- Video Info -->
           <div class="content-video-block">
-            <h3 class="video-title">Title</h3>
-            <p class="video-views">Views</p>
+            <h3 class="video-title">{{videoDetail.video_title}}</h3>
+            <p class="video-views">{{videoDetail.video_views | number}} Views</p>
           </div>
 
           <!-- Extra info about video -->
           <div class="about-video-block">
-            <a class="video-channel">Channel Name</a>
-            <p class="video-date">Date</p>
-            <p class="video-desc">Video Desc</p>
+            <a class="video-channel">{{videoDetail.video_channel}}</a>
+            <p class="video-date">{{videoDetail.video_time | date}}</p>
+            <p class="video-desc">{{videoDetail.video_desc}}</p>
           </div>          
 
         </div>

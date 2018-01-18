@@ -1,79 +1,55 @@
+import { Video } from './video.model';
 
 
 export class VideoService {
 
-    videos = [
-        {
-          'section_title': 'Most Watched',
-          'section_videoDetails': [
-            {
-              video_title: 'Video 1',
-              video_channel: 'Channel 1',
-              video_views: '2.3M',
-              video_time: '3 Months ago'
-            },
-            {
-              video_title: 'Video 2',
-              video_channel: 'Channel 1',
-              video_views: '2.1M',
-              video_time: '3 Months ago'
-            },
-            {
-              video_title: 'Video 3',
-              video_channel: 'Channel 1',
-              video_views: '2.3M',
-              video_time: '3 Months ago'
-            },
-            {
-              video_title: 'Video 4',
-              video_channel: 'Channel 1',
-              video_views: '2.3M',
-              video_time: '3 Months ago'
-            },
-            {
-              video_title: 'Video 5',
-              video_channel: 'Channel 1',
-              video_views: '2.3M',
-              video_time: '3 Months ago'
-            }
-          ]
-        },
-        {
-          'section_title': 'Recently Added',
-          'section_videoDetails': [
-            {
-              video_title: 'Video 1',
-              video_channel: 'Channel 1',
-              video_views: '2.3M',
-              video_time: '3 Months ago'
-            },
-            {
-              video_title: 'Video 2',
-              video_channel: 'Channel 1',
-              video_views: '2.1M',
-              video_time: '3 Months ago'
-            },
-            {
-              video_title: 'Video 3',
-              video_channel: 'Channel 1',
-              video_views: '2.3M',
-              video_time: '3 Months ago'
-            },
-            {
-              video_title: 'Video 4',
-              video_channel: 'Channel 1',
-              video_views: '2.3M',
-              video_time: '3 Months ago'
-            },
-            {
-              video_title: 'Video 5',
-              video_channel: 'Channel 1',
-              video_views: '2.3M',
-              video_time: '3 Months ago'
-            }
-          ]
-        }
-      ];
+    // videos = [
+    //     {
+    //       'section_title': 'Most Watched',
+    //       'section_videoDetails': []
+
+    videos: Video[] = [
+      new Video(
+         '1',
+         'Video 1',
+         'Channel 1',
+         2000,
+         new Date(2017, 10, 21),
+         'Lorem Ipsum'
+      ),
+      new Video(
+         '2',
+         'Video 2',
+         'Channel 1',
+         21000,
+         new Date(2017, 10, 21),
+         'Lorem Ipsum'
+      ),
+      new Video(
+         '3',
+         'Video 3',
+         'Channel 1',
+         230000,
+         new Date(2017, 10, 21),
+         'Lorem Ipsum'
+      ),
+      new Video(
+         '4',
+         'Video 4',
+         'Channel 1',
+         230,
+         new Date(2017, 10, 21),
+         'Lorem Ipsum'
+      ),
+      new Video(
+         '5',
+         'Video 5',
+         'Channel 1',
+         20,
+         new Date(2017, 10, 21),
+         'Lorem Ipsum'
+      )
+    ];
 
     constructor() {
 
@@ -81,6 +57,10 @@ export class VideoService {
 
     getVideos() {
         return this.videos.slice();
+    }
+
+    getVideo(index: string) {
+      return this.videos.find(obj => obj.video_id === index);
     }
 
 }
