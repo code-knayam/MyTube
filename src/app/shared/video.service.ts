@@ -15,7 +15,8 @@ export class VideoService {
          'Channel 1',
          2000,
          new Date(2017, 10, 21),
-         'Lorem Ipsum'
+         'Lorem Ipsum',
+         ''
       ),
       new Video(
          '2',
@@ -23,7 +24,8 @@ export class VideoService {
          'Channel 1',
          21000,
          new Date(2017, 10, 21),
-         'Lorem Ipsum'
+         'Lorem Ipsum',
+         ''
       ),
       new Video(
          '3',
@@ -31,7 +33,8 @@ export class VideoService {
          'Channel 1',
          230000,
          new Date(2017, 10, 21),
-         'Lorem Ipsum'
+         'Lorem Ipsum',
+         ''
       ),
       new Video(
          '4',
@@ -39,7 +42,8 @@ export class VideoService {
          'Channel 1',
          230,
          new Date(2017, 10, 21),
-         'Lorem Ipsum'
+         'Lorem Ipsum',
+         ''
       ),
       new Video(
          '5',
@@ -47,7 +51,8 @@ export class VideoService {
          'Channel 1',
          20,
          new Date(2017, 10, 21),
-         'Lorem Ipsum'
+         'Lorem Ipsum',
+         ''
       )
     ];
 

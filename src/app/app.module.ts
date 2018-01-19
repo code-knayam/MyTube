@@ -12,6 +12,8 @@ import { FooterComponent } from './core/footer/footer.component';
 import { WatchComponent } from './watch/watch.component';
 import { VideoService } from './shared/video.service';
 import { VideoDetailComponent } from './shared/video-detail/video-detail.component';
+import { UploadComponent } from './upload/upload.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { VideoDetailComponent } from './shared/video-detail/video-detail.compone
     SignUpComponent,
     FooterComponent,
     WatchComponent,
-    VideoDetailComponent
+    VideoDetailComponent,
+    UploadComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,68 @@
+<div class="jumbotron uploadForm">
+  <div class="container">
+    <div class="row">      
+      <div class="col-md-8">
+
+        <h3 class="title">Upload a Video Now : </h3>
+
+        <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">          
+
+          <!-- Video Title -->
+          <div class="form-group ">            
+            <label 
+              for="video_title"            
+              [ngClass]="uploadForm.controls.video_title.value != '' && uploadForm.controls.video_title.dirty ?'active-label':'inactive-label' ">
+              Title</label>   
+            <input 
+              type="text" 
+              class="form-control" 
+              name="video_title"                 
+              formControlName="video_title">                   
+            <span 
+              class="error"
+              *ngIf="uploadForm.controls.video_title.dirty && uploadForm.controls.video_title.invalid && uploadForm.controls.video_title.errors.required == true">Title is required.</span>            
+          </div>
+
+          <!-- Video URL -->
+          <div class="form-group ">
+            <label 
+              for="video_url"            
+              [ngClass]="uploadForm.controls.video_url.value != '' && uploadForm.controls.video_url.dirty ?'active-label':'inactive-label' ">
+              Video URL</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              name="video_url"                 
+              formControlName="video_url">                      
+            <span 
+              class="error"
+              *ngIf="uploadForm.controls.video_url.dirty && uploadForm.controls.video_url.invalid && uploadForm.controls.video_url.errors.required == true">URL is required.</span>
+          </div>
+
+          <!-- Video Description -->
+          <div class="form-group ">
+            <label 
+              for="video_desc"            
+              [ngClass]="uploadForm.controls.video_desc.value != '' && uploadForm.controls.video_desc.dirty ?'active-label':'inactive-label' ">
+              Description</label> 
+            <textarea               
+              class="form-control" 
+              rows="6" cols="50"
+              name="video_desc"                 
+              formControlName="video_desc"> 
+            </textarea>                      
+            <span 
+              class="error"
+              *ngIf="uploadForm.controls.video_desc.dirty && uploadForm.controls.video_desc.invalid && uploadForm.controls.video_desc.errors.required == true">Description is required.</span>
+          </div>          
+                        
+
+          <div class="row submit-group">
+            <button type="submit" class="btn submit-btn" [disabled]="!uploadForm.valid" >Upload</button>
+          </div>          
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,12 +5,16 @@ import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { WatchComponent } from './watch/watch.component';
+import { UploadComponent } from './upload/upload.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'signIn', component: SignInComponent},
     {path: 'signUp', component: SignUpComponent},
-    {path: 'watch', component: WatchComponent}
+    {path: 'watch', component: WatchComponent},
+    {path: 'upload', component: UploadComponent},
+    {path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({
