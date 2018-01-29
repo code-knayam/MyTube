@@ -16,22 +16,22 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li routerLinkActive="">
+        <li routerLinkActive="" title="Sign In" *ngIf="!authService.isLoggedIn()">
           <a routerLink="/signIn">Sign In</a>
         </li>
         <li routerLinkActive="">
-          <a routerLink="/profile">
+          <a routerLink="/profile" title="Profile">
             <i class="fa fa-user"></i>
           </a>
-        </li>
-        <!-- <li routerLinkActive="">
-            <a routerLink="/">Log Out</a>
-          </li> -->
-        <li routerLinkActive="">
+        </li>        
+        <li routerLinkActive="" title="Upload">
           <a routerLink="/upload">
             <i class="fa fa-upload"></i>
           </a>
         </li>
+        <li routerLinkActive="" title="Log Out" *ngIf="authService.isLoggedIn()">
+            <a (click)="logOutUser()">Log Out</a>
+          </li>
         <!-- <li routerLinkActive="">
           <a routerLink="/">
             <i class="fa fa-bars"></i>

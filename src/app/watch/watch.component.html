@@ -7,7 +7,7 @@
         <!-- Contains Video Player -->
         <div class="row">
           <div class="video-block">
-            <video src=""></video>
+            <video [src]="videoDetail.video_url" controls></video>
           </div>
         </div>
 
@@ -17,7 +17,24 @@
           <!-- Video Info -->
           <div class="content-video-block">
             <h3 class="video-title">{{videoDetail.video_title}}</h3>
-            <p class="video-views">{{videoDetail.video_views | number}} Views</p>
+            <p class="video-details">
+              <span>
+                {{videoDetail.video_views | number}} Views
+              </span>
+              <span class="vide-detail-more pull-right">
+                <i class="fa fa-ellipsis-h"></i>
+              </span>
+              <span class="vide-detail-share pull-right">
+                <i class="fa fa-share"></i> Share
+              </span>
+              <span class="video-detail-like pull-right">
+                <i class="fa fa-thumbs-down"></i> {{videoDetail.video_dislikes | number}}
+              </span>
+              <span class="video-detail-like pull-right">
+                <i class="fa fa-thumbs-up"></i> {{videoDetail.video_likes | number}}
+              </span>
+            </p>
+
           </div>
 
           <!-- Extra info about video -->
@@ -25,7 +42,7 @@
             <a class="video-channel">{{videoDetail.video_channel}}</a>
             <p class="video-date">{{videoDetail.video_time | date}}</p>
             <p class="video-desc">{{videoDetail.video_desc}}</p>
-          </div>          
+          </div>
 
         </div>
 

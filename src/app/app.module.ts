@@ -14,6 +14,7 @@ import { VideoService } from './shared/video.service';
 import { VideoDetailComponent } from './shared/video-detail/video-detail.component';
 import { UploadComponent } from './upload/upload.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { ProfileComponent } from './profile/profile.component';
     AppRoutingModule
   ],
   providers: [
-    VideoService
+    VideoService, AuthService
   ],
   bootstrap: [AppComponent]
 })

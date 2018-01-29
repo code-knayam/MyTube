@@ -20,7 +20,6 @@ export class WatchComponent implements OnInit {
     this.route.queryParams.subscribe(
       (params: Params) => {
         this.id = params['v'];
-        console.log(this.id);
         this.videoDetail = this.videoService.getVideo(this.id);
         console.log(this.videoDetail);
       }

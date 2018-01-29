@@ -3,11 +3,6 @@ import { Video } from './video.model';
 
 export class VideoService {
 
-    // videos = [
-    //     {
-    //       'section_title': 'Most Watched',
-    //       'section_videoDetails': []
-
     videos: Video[] = [
       new Video(
          '1',
@@ -16,7 +11,9 @@ export class VideoService {
          2000,
          new Date(2017, 10, 21),
          'Lorem Ipsum',
-         ''
+         'http://abs',
+         320,
+         120
       ),
       new Video(
          '2',
@@ -25,7 +22,9 @@ export class VideoService {
          21000,
          new Date(2017, 10, 21),
          'Lorem Ipsum',
-         ''
+         'http://abs',
+         320,
+         120
       ),
       new Video(
          '3',
@@ -34,7 +33,9 @@ export class VideoService {
          230000,
          new Date(2017, 10, 21),
          'Lorem Ipsum',
-         ''
+         'http://abs',
+         320,
+         120
       ),
       new Video(
          '4',
@@ -43,7 +44,9 @@ export class VideoService {
          230,
          new Date(2017, 10, 21),
          'Lorem Ipsum',
-         ''
+         'http://abs',
+         320,
+         120
       ),
       new Video(
          '5',
@@ -52,7 +55,9 @@ export class VideoService {
          20,
          new Date(2017, 10, 21),
          'Lorem Ipsum',
-         ''
+         'assets/video5.mp4',
+         320,
+         120
       )
     ];
 

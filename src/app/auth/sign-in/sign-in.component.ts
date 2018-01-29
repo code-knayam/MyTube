@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 
 import * as CONSTANTS from '../../shared/constants';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -13,7 +13,7 @@ export class SignInComponent implements OnInit {
 
   signInForm: FormGroup;
 
-  constructor( private router: Router) { }
+  constructor( private authService: AuthService) { }
 
   ngOnInit() {
     this.initForm();
@@ -21,15 +21,16 @@ export class SignInComponent implements OnInit {
 
   private initForm() {
     this.signInForm = new FormGroup({
-      username: new FormControl( null, [Validators.required, Validators.pattern(CONSTANTS.USERNAME_REGEX) ] ),
       email: new FormControl( null, [Validators.required, Validators.pattern(CONSTANTS.EMAIL_REGEX) ] ),
-      password: new FormControl( null, [Validators.required, Validators.minLength(8), Validators.pattern(CONSTANTS.PASSWORD_REGEX) ])
+      password: new FormControl( null, [Validators.required ])
     });
   }
 
   onSubmit() {
     console.log('Form Submitted');
-    this.router.navigate(['/']);
+    const email = this.signInForm.value.email;
+    const password = this.signInForm.value.password;
+    this.authService.signInUser(email, password);
   }
 
 

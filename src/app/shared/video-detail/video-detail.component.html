@@ -1,6 +1,8 @@
 <div class="video-block">
   <div class="img-section">
-    <img src="./assets/thumbnail.png" alt="" class="img-responsive">
+    <a routerLink="/watch" [queryParams]="{v: videoDetail.video_id}">
+      <img src="./assets/thumbnail.png" alt="" class="img-responsive">
+    </a>
   </div>
   <div class="content-section">
     <h3 class="content-title">
@@ -14,7 +16,7 @@
       </a>
     </h4>
     <p>
-      <span>{{videoDetail.video_views | number}}</span>
+      <span>{{videoDetail.video_views | number}} Views</span>
       <i class="fa fa-circle fa-fw"></i>
       <span>{{videoDetail.video_time | date}}</span>
     </p>

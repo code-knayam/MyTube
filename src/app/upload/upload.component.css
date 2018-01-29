@@ -29,6 +29,7 @@
 .uploadForm  .form-group textarea {
     height: auto;
     resize: none;
+    padding-top: 10px;
 }
 .uploadForm  .form-group input {
     height: 40px;    

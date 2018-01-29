@@ -16,10 +16,15 @@
     font-size: 25px;
     margin-bottom: 15px;
 }
-.content-video-block .video-views {
+.content-video-block .video-details {
     font-size: 15px;
     color: #888;
     margin-bottom: 5px;
+}
+.content-video-block .video-details span {
+    font-size: 15px;
+    margin-left: 10px;
+    margin-right: 10px;    
 }
 
 .about-video-block {
