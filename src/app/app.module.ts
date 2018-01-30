@@ -15,6 +15,9 @@ import { VideoDetailComponent } from './shared/video-detail/video-detail.compone
 import { UploadComponent } from './upload/upload.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth-guard.service';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { SpinnerService } from './spinner.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { AuthService } from './auth/auth.service';
     WatchComponent,
     VideoDetailComponent,
     UploadComponent,
-    ProfileComponent
+    ProfileComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,10 @@ import { AuthService } from './auth/auth.service';
     AppRoutingModule
   ],
   providers: [
-    VideoService, AuthService
+    VideoService,
+    AuthService,
+    AuthGuard,
+    SpinnerService
   ],
   bootstrap: [AppComponent]
 })

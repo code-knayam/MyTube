@@ -1,13 +1,15 @@
 import * as firebase from 'firebase';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
+import { SpinnerService } from '../spinner.service';
 
 @Injectable()
 export class AuthService {
 
     token: string;
 
-    constructor( private router: Router) {}
+    constructor( private router: Router,
+                private spinnerService: SpinnerService) {}
 
     signUpUser(email: string, password: string) {
         firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -15,6 +17,7 @@ export class AuthService {
             (response) => {
                 console.log('Sign Up Success');
                 this.setToken();
+                this.showSpinner();
                 this.router.navigate(['/']);
             }
         )
@@ -29,6 +32,7 @@ export class AuthService {
             (response) => {
                 console.log('Sign In Success');
                 this.setToken();
+                this.showSpinner();
                 this.router.navigate(['/']);
             }
         )
@@ -53,6 +57,10 @@ export class AuthService {
 
     isLoggedIn() {
         return this.token != null;
+    }
+
+    showSpinner() {
+        this.spinnerService.startSpinner();
     }
 
 }
