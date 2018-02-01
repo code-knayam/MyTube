@@ -18,4 +18,11 @@ export class HomeComponent implements OnInit {
     this.videoDetails = this.videoService.getVideos();
   }
 
+  setVideos() {
+    this.videoService.setVideos().subscribe(
+      (response) => console.log(response),
+      (error) => console.log(error)
+    );
+  }
+
 }

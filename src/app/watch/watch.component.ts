@@ -26,4 +26,12 @@ export class WatchComponent implements OnInit {
     );
   }
 
+  onLikeVideo() {
+    this.videoService.likeVideo(this.id);
+  }
+
+  onUnlikeVideo() {
+    this.videoService.unlikeVideo(this.id);
+  }
+
 }
