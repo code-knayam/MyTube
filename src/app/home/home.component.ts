@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { VideoService } from '../shared/video.service';
 import { Video } from '../shared/video.model';
+import { SpinnerService } from '../spinner.service';
 
 @Component({
   selector: 'app-home',
@@ -12,16 +13,15 @@ export class HomeComponent implements OnInit {
 
   videoDetails: Video[] ;
 
-  constructor(private videoService: VideoService) { }
+  constructor(private videoService: VideoService, private spinnerService: SpinnerService) { }
 
   ngOnInit() {
-    this.videoDetails = this.videoService.getVideos();
-  }
-
-  setVideos() {
-    this.videoService.setVideos().subscribe(
-      (response) => console.log(response),
-      (error) => console.log(error)
+    this.spinnerService.startSpinner();
+    this.videoService.getVideos().subscribe(
+      (videos: Video[]) => {
+        this.videoDetails = videos;
+        this.spinnerService.stopSpinner();
+      }
     );
   }
 

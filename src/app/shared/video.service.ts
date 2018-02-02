@@ -1,6 +1,8 @@
 import { Video } from './video.model';
 import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import 'rxjs/Rx';
+
 
 @Injectable()
 export class VideoService {
@@ -68,7 +70,12 @@ export class VideoService {
     constructor(private httpClient: HttpClient) {}
 
     getVideos() {
-        return this.videos.slice();
+      return this.httpClient.get<Video[]>('https://mytube-117fc.firebaseio.com/videos.json')
+      .map(
+        (videos) => {
+          return videos;
+        }
+      );
     }
 
     getVideo(index: string) {
@@ -83,15 +90,21 @@ export class VideoService {
       this.videos.find(obj => obj.video_id === index).video_dislikes++;
     }
 
-    setVideos() {
-      return this.httpClient.put('https://mytube-117fc.firebaseio.com/videos.json', this.videos);
+    setVideos(videos: Video[]) {
+      this.videos = videos;
+      // return this.httpClient.put('https://mytube-117fc.firebaseio.com/videos.json', this.videos);
     }
 
     fetchVideos() {
       return this.httpClient.get<Video[]>('https://mytube-117fc.firebaseio.com/videos.json')
+      .map(
+        (videos) => {
+          return videos;
+        }
+      )
       .subscribe(
         (videos: Video[]) => {
-          this.videos = videos;
+          this.setVideos(videos);
         }
       );
     }
